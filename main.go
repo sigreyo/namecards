@@ -15,7 +15,6 @@ import (
 )
 
 func main() {
-	// Read the image file
 	imgFile, _ := os.Open("namecard.png")
 	defer imgFile.Close()
 	img, _, err := image.Decode(imgFile)
@@ -39,7 +38,6 @@ func main() {
 	// Create a new face to calculate text width and height
 	opts := truetype.Options{}
 	opts.Size = 12
-	// face := truetype.NewFace(f, &opts)
 
 	// Card size
 	cardWidth := 80.0
@@ -66,8 +64,6 @@ func main() {
 		// Calculate the current row and column
 		row := float64((i % imagesPerPage) / 2)
 		col := float64((i % imagesPerPage) % 2)
-
-		// ... other parts of the code
 
 		// Calculate text width and height
 		c := freetype.NewContext()
